@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!-- BOX-ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="assets/css/style.css">
-  
-  <title>IP Address Tracker</title>
+    <!-- Library Leafletjs -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script 
+        src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="">
+    </script>
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>IP Address Tracker</title>
 </head>
+
 <body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title">
+                IP Address Tracker
+            </h1>
 
-  IP Address Tracker
+            <form action="" id="form">
+                <input type="search" name="searchIp" id="searchIp" placeholder="Search for any IP address or domain" autocomplete="off">
+                <button type="submit" class="btn-search">
+                    <i class='bx bx-chevron-right arrow-icon'></i>
+                </button>
+            </form>
 
-  Search for any IP address or domain
+            <div class="content-ip">
+                <ul class="info-ip">
+                    <li class="ip-item">
+                        <small class="ip-description">Ip address</small>
+                        <span class="ip-value"></span>
+                    </li> 
+                    <li class="ip-item">
+                        <small class="ip-description">Location</small>
+                        <span class="location-value"></span>
+                    </li>
+                    <li class="ip-item">
+                        <small class="ip-description">Timezone</small>
+                        <span class="timezone-value"></span>
+                    </li>
+                    <li class="ip-item">
+                        <small class="ip-description">ISP</small>
+                        <span class="isp-value"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
-
-  <script src="assets/js/script.js"></script>
+    <main id="map"></main>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
