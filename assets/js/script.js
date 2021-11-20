@@ -42,9 +42,8 @@ form.addEventListener('submit', (e) => {
     } 
 });
 
-// -22.41139, -47.56139
 // Responsavel por gerar o mapa 
-let mymap = L.map('map').setView([-22.41139, -47.56139], 13);
+let mymap = L.map('map').setView([lat, lng], 13);
 let marker = L.marker([-22.41139, -47.56139]).addTo(mymap);
 
 L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${token}`, {
